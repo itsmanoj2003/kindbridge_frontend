@@ -1,0 +1,275 @@
+
+.gemini-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    background: linear-gradient(135deg, #f5f3ff, #eef2ff, #faf5ff);
+    font-family: Arial, sans-serif;
+}
+
+.gemini-card {
+    width: 100%;
+    max-width: 650px;
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(67, 56, 202, 0.12);
+    border: 1px solid #eee9ff;
+}
+
+/* Header */
+
+.gemini-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 25px 30px;
+    background: linear-gradient(135deg, #5145b8, #8065e8, #a78bfa);
+    color: white;
+}
+
+.gemini-logo {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 15px;
+    font-size: 27px;
+    color: #ffe58f;
+}
+
+.gemini-header h2 {
+    margin: 0;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.gemini-header p {
+    margin: 5px 0 0;
+    font-size: 13px;
+    color: #eee9ff;
+}
+
+/* Main content */
+
+.gemini-content {
+    padding: 35px 30px;
+}
+
+.gemini-welcome {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.gemini-welcome span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    background: #f0ebff;
+    border-radius: 50%;
+    color: #7254d6;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.gemini-welcome h3 {
+    color: #282344;
+    font-size: 22px;
+    margin: 8px 0;
+}
+
+.gemini-welcome p {
+    color: #88849b;
+    font-size: 14px;
+}
+
+/* Input */
+
+.gemini-input-group {
+    display: flex;
+    gap: 12px;
+    padding: 8px;
+    border: 1px solid #e4def8;
+    border-radius: 15px;
+    background: #faf9ff;
+    transition: 0.3s ease;
+}
+
+.gemini-input-group:focus-within {
+    border-color: #8065e8;
+    box-shadow: 0 0 0 4px rgba(128, 101, 232, 0.1);
+}
+
+.gemini-input-group input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 12px;
+    font-size: 14px;
+    color: #292344;
+}
+
+.gemini-input-group input::placeholder {
+    color: #aaa5bb;
+}
+
+/* Ask AI button */
+
+.kindai-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 11px;
+    background: linear-gradient(135deg, #6558d3, #9b72ed);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: 0.3s ease;
+}
+
+.kindai-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(101, 88, 211, 0.3);
+}
+
+.kindai-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Loading */
+
+.gemini-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-top: 25px;
+    color: #7662cf;
+}
+
+.gemini-loading span {
+    width: 7px;
+    height: 7px;
+    background: #8065e8;
+    border-radius: 50%;
+    animation: geminiBounce 0.8s infinite alternate;
+}
+
+.gemini-loading span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.gemini-loading span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.gemini-loading p {
+    font-size: 13px;
+    margin-left: 7px;
+}
+
+@keyframes geminiBounce {
+    from {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+    to {
+        transform: translateY(-6px);
+        opacity: 1;
+    }
+}
+
+/* AI Response */
+
+.gemini-answer {
+    margin-top: 28px;
+    padding: 22px;
+    background: #f8f6ff;
+    border: 1px solid #e8e0ff;
+    border-left: 4px solid #8065e8;
+    border-radius: 13px;
+    animation: answerAppear 0.4s ease;
+}
+
+.gemini-answer h4 {
+    margin: 0 0 12px;
+    color: #624cc2;
+    font-size: 15px;
+}
+
+.gemini-answer p {
+    margin: 0;
+    color: #48435d;
+    font-size: 14px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+@keyframes answerAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+
+.gemini-footer {
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #f0edfa;
+    color: #aaa3bd;
+    font-size: 12px;
+}
+
+/* Responsive */
+
+@media (max-width: 500px) {
+
+    .gemini-content {
+        padding: 25px 18px;
+    }
+
+    .gemini-header {
+        padding: 20px;
+    }
+
+    .gemini-welcome h3 {
+        font-size: 19px;
+    }
+
+    .gemini-input-group {
+        flex-direction: column;
+    }
+
+    .kindai-btn {
+        width: 100%;
+    }
+
+    .gemini-answer {
+        padding: 16px;
+    }
+}

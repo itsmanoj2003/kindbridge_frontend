@@ -14,6 +14,10 @@ export default function UserDashboard() {
     const [searchTerm, setSearchTerm] = useState('');
     const [loading, setLoading] = useState(true);
 
+    function handleAInavigate(){
+        navigate('/kindbridgeassistant')
+    }
+
   
 useEffect(() => {
 
@@ -117,6 +121,9 @@ useEffect(() => {
                         Together, we can build a brighter future
                         for children.
                     </p>
+
+                    <button style={{height:'30px',width:'150px',fontWeight:'bold',borderRadius:'5px',border:'none',color:'#476652',cursor:'pointer'}} onClick={handleAInavigate}>AI Help Desk</button>
+
                 </div>
 
                 <div className="ud-welcome-heart">

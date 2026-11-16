@@ -10,6 +10,7 @@ const LazyUserdashboard = React.lazy(()=>import('./Components/UserDashboard'))
 const LazyOrphanageadmin = React.lazy(()=>import('./Components/Orphanageadmin'))
 const LazySignup = React.lazy(()=>import('./Components/Signup'))
 const LazyLogin = React.lazy(()=>import('./Components/Login'))
+const LazyAI = React.lazy(()=>import('./Components/GeminiAI'))
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/userdashboard' element={<React.Suspense fallback={<Loader/>}><LazyUserdashboard/></React.Suspense>}/>
         <Route path='/signup' element={<React.Suspense fallback={<Loader/>}><LazySignup/></React.Suspense>}/>
         <Route path ='/login' element={<React.Suspense fallback={<Loader/>}><LazyLogin/></React.Suspense>}/>
+        <Route path ='/kindbridgeassistant' element={<React.Suspense fallback={<Loader/>}><LazyAI/></React.Suspense>}/>
       </Routes>
     </div>
   );
