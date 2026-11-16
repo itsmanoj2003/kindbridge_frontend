@@ -14,24 +14,26 @@ export default function UserDashboard() {
     const [searchTerm, setSearchTerm] = useState('');
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
+  
+useEffect(() => {
 
-        if (!user) {
-            navigate('/login');
-            return;
-        }
+    if (!user) {
+        navigate('/login');
+        return;
+    }
 
-        axios.get('http://3.107.161.192/child/getallchildren')
-            .then(res => {
-                setChildren(res.data.children);
-                setLoading(false);
-            })
-            .catch(err => {
-                console.log(err);
-                setLoading(false);
-            });
+    axios.get('http://3.107.161.192/child/getallchildren')
+        .then(res => {
+            setChildren(res.data.children);
+            setLoading(false);
+        })
+        .catch(err => {
+            console.log(err);
+            setLoading(false);
+        });
 
-    }, []);
+}, [user, navigate]);
+
 
     // Search by name and location
     const filteredChildren = children.filter(child => {
