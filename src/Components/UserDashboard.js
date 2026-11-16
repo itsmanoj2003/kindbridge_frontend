@@ -21,7 +21,7 @@ export default function UserDashboard() {
             return;
         }
 
-        axios.get('http://localhost:3001/child/getallchildren')
+        axios.get('http://3.107.161.192/child/getallchildren')
             .then(res => {
                 setChildren(res.data.children);
                 setLoading(false);
@@ -55,7 +55,7 @@ export default function UserDashboard() {
         };
 
         axios.post(
-            'http://localhost:3001/adoption/addadoption',
+            'http://3.107.161.192/adoption/addadoption',
             adoptionData
         )
         .then(res => {

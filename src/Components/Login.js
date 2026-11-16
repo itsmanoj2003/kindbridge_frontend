@@ -33,7 +33,7 @@ export default function Login() {
 function handleUserLogin(e) {
     e.preventDefault();
 
-    axios.post('http://localhost:3001/users/userlogin', userData)
+    axios.post('http://3.107.161.192/users/userlogin', userData)
         .then(res => {
             alert("You are logged in Successfully");
 
@@ -85,7 +85,7 @@ function handleUserLogin(e) {
         e.preventDefault();
 
         axios.post(
-            'http://localhost:3001/orphanages/orphanagelogin',
+            'http://3.107.161.192/orphanages/orphanagelogin',
             orphanageData
         )
             .then(res => {

@@ -41,7 +41,7 @@ export default function Signup() {
 
     function handleUsersubmit(e) {
         e.preventDefault()
-        axios.post('http://localhost:3001/users/createuser', userData)
+        axios.post('http://3.107.161.192/users/createuser', userData)
             .then(res => {
                 alert(`Welcome ! ${userData.userName}, Activation Link is send to your Email`)
                 // localStorage.setItem('user',JSON.stringify(res.data.newUser))
@@ -93,7 +93,7 @@ export default function Signup() {
         e.preventDefault();
 
         axios.post(
-            'http://localhost:3001/orphanages/createorphanage',
+            'http://3.107.161.192/orphanages/createorphanage',
             orphanageData
         )
             .then(res => {

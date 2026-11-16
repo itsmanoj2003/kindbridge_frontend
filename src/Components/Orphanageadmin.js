@@ -40,7 +40,7 @@ export default function Orphanageadmin() {
     // Fetch orphanage details
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/orphanages/${id}`)
+        axios.get(`http://3.107.161.192/orphanages/${id}`)
             .then(res => {
                 setOrphanageData(res.data.orphanage);
             })
@@ -60,7 +60,7 @@ export default function Orphanageadmin() {
 
         setChildrenLoading(true);
 
-        axios.get(`http://localhost:3001/child/getchildren/${id}`)
+        axios.get(`http://3.107.161.192/child/getchildren/${id}`)
             .then(res => {
                 setChildren(res.data.children);
             })
@@ -80,7 +80,7 @@ export default function Orphanageadmin() {
 
         setAdoptionLoading(true);
 
-        axios.get(`http://localhost:3001/adoption/getadoptions/${id}`)
+        axios.get(`http://3.107.161.192/adoption/getadoptions/${id}`)
             .then(res => {
                 setAdoptionRequests(res.data.adoptionDetails);
             })
@@ -145,7 +145,7 @@ export default function Orphanageadmin() {
         if (editingId) {
 
             axios.put(
-                `http://localhost:3001/child/updatechild/${editingId}`,
+                `http://3.107.161.192/child/updatechild/${editingId}`,
                 childData
             )
                 .then(res => {
@@ -165,7 +165,7 @@ export default function Orphanageadmin() {
                     setShowForm(false);
 
                     return axios.get(
-                        `http://localhost:3001/child/getchildren/${id}`
+                        `http://3.107.161.192/child/getchildren/${id}`
                     );
 
                 })
@@ -183,7 +183,7 @@ export default function Orphanageadmin() {
         } else {
 
             axios.post(
-                'http://localhost:3001/child/addchild',
+                'http://3.107.161.192/child/addchild',
                 {
                     ...childData,
                     orphanageId: id
@@ -205,7 +205,7 @@ export default function Orphanageadmin() {
                     setShowForm(false);
 
                     return axios.get(
-                        `http://localhost:3001/child/getchildren/${id}`
+                        `http://3.107.161.192/child/getchildren/${id}`
                     );
 
                 })
@@ -232,13 +232,13 @@ export default function Orphanageadmin() {
             return;
         }
 
-        axios.delete(`http://localhost:3001/child/deletechild/${childId}`)
+        axios.delete(`http://3.107.161.192/child/deletechild/${childId}`)
             .then(res => {
 
                 alert('Child Deleted Successfully');
 
                 return axios.get(
-                    `http://localhost:3001/child/getchildren/${id}`
+                    `http://3.107.161.192/child/getchildren/${id}`
                 );
 
             })
@@ -263,7 +263,7 @@ export default function Orphanageadmin() {
         setDeletingRequest(adoptionId);
 
         axios.delete(
-            `http://localhost:3001/adoption/deleteadoption/${adoptionId}`
+            `http://3.107.161.192/adoption/deleteadoption/${adoptionId}`
         )
             .then(res => {
 
